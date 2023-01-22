@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { gameplan } from '@lib/gameplan';
+	import type { Gameplan } from '@lib/types';
 
-	export let playersInBox = gameplan.tactics.offence.playersInBox ?? 5;
+	export let gameplan: Gameplan;
 </script>
 
 <article>
@@ -10,24 +10,31 @@
 	<section>
 		<h3>Defence</h3>
 		<strong>Defensive style</strong>
-		<span>{gameplan.tactics.defence.style}</span>
+		<span>{gameplan.defStyle}</span>
 	</section>
 
 	<section>
 		<h3>Offence</h3>
 		<div>
 			<strong>Build up play:</strong>
-			<span>{gameplan.tactics.offence.buildUpPlay}</span>
+			<span>{gameplan.buildUpPlay}</span>
 		</div>
 		<div>
 			<strong>Chance creation:</strong>
-			<span>{gameplan.tactics.offence.chanceCreation}</span>
+			<span>{gameplan.chanceCreation}</span>
 		</div>
 		<div>
 			<strong>Players in box:</strong>
-			<span>{gameplan.tactics.offence.playersInBox}</span>
+			<span>{gameplan.playersInBox}</span>
 		</div>
-		<input type="range" min="1" max="10" bind:value={playersInBox} />
+		<div>
+			<strong>Corners:</strong>
+			<span>{gameplan.corners}</span>
+		</div>
+		<div>
+			<strong>Free kicks:</strong>
+			<span>{gameplan.freeKicks}</span>
+		</div>
 	</section>
 	<div>
 		<button>Copy as text ✨</button>
@@ -41,6 +48,7 @@
 		padding: 1rem;
 		background: var(--color-lightgrey);
 		border-radius: var(--medium);
+		border: var(--tiny) solid var(--color-secondary);
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
@@ -49,9 +57,6 @@
 	section {
 		display: flex;
 		flex-direction: column;
-		padding: 1rem;
-		border: var(--tiny) solid var(--color-secondary);
-		border-radius: var(--medium);
 	}
 
 	div {

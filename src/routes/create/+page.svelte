@@ -20,8 +20,8 @@
 				chanceCreation: ChanceCreation.possession,
 				width: 50,
 				playersInBox: 6,
-				corners: 1,
-				freeKicks: 1
+				corners: 2,
+				freeKicks: 2
 			}
 		},
 		playerInstructions: {}
@@ -118,6 +118,51 @@
 			min="1"
 			max="100"
 		/>
+		<label for="playersInBox">Players in box</label>
+		<input
+			name="playersInBox"
+			type="range"
+			bind:value={newGameplan.tactics.offence.playersInBox}
+			min="1"
+			max="10"
+		/>
+		<input
+			name="playersInBox"
+			type="number"
+			bind:value={newGameplan.tactics.offence.playersInBox}
+			min="1"
+			max="10"
+		/>
+		<label for="corners">Corners</label>
+		<input
+			name="corners"
+			type="range"
+			bind:value={newGameplan.tactics.offence.corners}
+			min="1"
+			max="5"
+		/>
+		<input
+			name="corners"
+			type="number"
+			bind:value={newGameplan.tactics.offence.freeKicks}
+			min="1"
+			max="5"
+		/>
+		<label for="freeKicks">Free kicks</label>
+		<input
+			name="freeKicks"
+			type="range"
+			bind:value={newGameplan.tactics.offence.freeKicks}
+			min="1"
+			max="5"
+		/>
+		<input
+			name="freeKicks"
+			type="number"
+			bind:value={newGameplan.tactics.offence.freeKicks}
+			min="1"
+			max="5"
+		/>
 	</fieldset>
 	<button>Create gameplan</button>
 </form>
@@ -161,6 +206,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--medium);
+		padding-top: var(--large);
 		border-radius: var(--large);
 		border: 2px solid var(--color-lightgrey);
 	}
@@ -174,6 +220,7 @@
 	label {
 		color: var(--color-grey);
 		font-size: 0.75rem;
+		padding-left: var(--small);
 	}
 
 	ul {

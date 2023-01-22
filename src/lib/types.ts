@@ -30,3 +30,20 @@ export const formations = [
 	'4-2-3-1 (2)',
 	'4-3-1-2'
 ];
+
+export type Gameplan = {
+	id?: number;
+	version: string;
+	title: string;
+	notes?: string;
+	formation: string;
+	defStyle: DefendingStyles;
+	defDepth?: number;
+	defWidth?: number;
+	buildUpPlay: BuildUpPlay;
+	chanceCreation: ChanceCreation;
+	attWidth?: number;
+	playersInBox?: number;
+	corners?: number;
+	freeKicks?: number;
+};

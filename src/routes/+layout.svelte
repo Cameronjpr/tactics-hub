@@ -1,3 +1,6 @@
+<script lang="ts">
+</script>
+
 <nav>
 	<span>
 		<a href="/">Tactics Hub </a>
