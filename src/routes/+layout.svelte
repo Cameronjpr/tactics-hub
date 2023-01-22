@@ -3,6 +3,9 @@
 	import { invalidate } from '$app/navigation';
 	import { supabaseClient } from '@lib/db';
 	import { onMount } from 'svelte';
+	import UserCircle from '@lib/icons/UserCircle.svelte';
+	import Cog from '@lib/icons/Cog.svelte';
+	import Create from '@lib/icons/Create.svelte';
 
 	onMount(() => {
 		const {
@@ -25,27 +28,27 @@
 	<section>
 		<div>
 			{#if $page?.data?.session}
-				<a href="/profile"
-					>Profile
-					<img src="icons/full/user-circle.svg" width="24" height="24" alt="a house" />
+				<a href="/profile">
+					Profile
+					<UserCircle />
 				</a>
 			{:else}
 				<a href="/login"
 					>Login
-					<img src="icons/full/user-circle.svg" width="24" height="24" alt="a house" />
+					<UserCircle />
 				</a>
 			{/if}
 		</div>
 		<div>
 			<a href="/create"
 				>Create
-				<img src="icons/full/create.svg" width="24" height="24" alt="a document" />
+				<Create />
 			</a>
 		</div>
 		<div>
 			<a href="/settings"
 				>Settings
-				<img src="icons/full/cog.svg" width="24" height="24" alt="a cog" />
+				<Cog />
 			</a>
 		</div>
 	</section>
@@ -91,16 +94,19 @@
 
 	a {
 		display: flex;
+		color: var(--off-white);
 		flex-direction: column-reverse;
 		align-items: center;
 		gap: var(--small);
 		text-decoration: none;
 	}
 	:visited {
-		color: white;
+		color: var(--off-white);
 	}
 
 	main {
 		padding: var(--medium);
+		max-width: 500px;
+		margin: 0 auto;
 	}
 </style>

@@ -1,22 +1,22 @@
 <script>
 	import Gameplan from '@lib/Gameplan/Gameplan.svelte';
+	import Chevron from '@lib/icons/Chevron.svelte';
 	export let data;
 
 	console.log(data?.gameplans);
 </script>
 
-<h1>TacticsHub</h1>
-
-{#if data?.gameplans}
-	<main>
+<main>
+	<h1>Browse gameplans</h1>
+	{#if data?.gameplans}
 		{#each data.gameplans as gameplan}
 			<a href="/gameplan/{gameplan.id}">
 				{gameplan.title || 'Untitled Gameplan'}
-				<img src="icons/full/chev-right.svg" width="24" height="24" alt="right-facing chevron" />
+				<Chevron />
 			</a>
 		{/each}
-	</main>
-{/if}
+	{/if}
+</main>
 
 <style>
 	main {
@@ -24,7 +24,7 @@
 		flex-direction: column;
 		gap: var(--large);
 		max-width: 500px;
-		/* margin: 0 auto; */
+		margin: 0 auto;
 	}
 
 	a {
@@ -38,6 +38,6 @@
 		background: var(--off-white);
 		border-radius: var(--large);
 		color: var(--color-secondary);
-		border: var(--tiny) solid var(--color-primary);
+		border: var(--tiny) solid var(--color-secondary);
 	}
 </style>
