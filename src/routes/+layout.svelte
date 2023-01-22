@@ -6,6 +6,7 @@
 	import UserCircle from '@lib/icons/UserCircle.svelte';
 	import Cog from '@lib/icons/Cog.svelte';
 	import Create from '@lib/icons/Create.svelte';
+	import Beaker from '@lib/icons/Beaker.svelte';
 
 	onMount(() => {
 		const {
@@ -22,8 +23,9 @@
 </script>
 
 <nav>
-	<span>
-		<a id="logo" href="/">Tactics Hub</a>
+	<span id="logo">
+		<Beaker />
+		<a href="/"> Tactics Hub</a>
 	</span>
 	<section>
 		<div>
@@ -93,8 +95,15 @@
 	}
 
 	#logo {
-		/* text-shadow: 0 0 30px var(--off-white); */
-		width: 80px;
+		display: flex;
+		background: transparent;
+		color: var(--color-tertiary);
+		align-items: center;
+		gap: var(--medium);
+	}
+
+	#logo a {
+		width: 100px;
 	}
 
 	a {
