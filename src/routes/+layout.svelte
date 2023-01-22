@@ -23,7 +23,7 @@
 
 <nav>
 	<span>
-		<a href="/">Tactics Hub </a>
+		<a id="logo" href="/">Tactics Hub</a>
 	</span>
 	<section>
 		<div>
@@ -88,8 +88,13 @@
 	}
 
 	span {
-		font-size: 2rem;
+		font-size: 1rem;
 		justify-self: end;
+	}
+
+	#logo {
+		/* text-shadow: 0 0 30px var(--off-white); */
+		width: 80px;
 	}
 
 	a {
