@@ -23,10 +23,10 @@
 </script>
 
 <nav>
-	<span id="logo">
+	<a id="logo" href="/">
 		<Beaker />
-		<a href="/"> Tactics Hub</a>
-	</span>
+		<span>Tactics Hub </span>
+	</a>
 	<section>
 		<div>
 			{#if $page?.data?.session}
@@ -96,14 +96,15 @@
 
 	#logo {
 		display: flex;
+		flex-direction: row;
 		background: transparent;
 		color: var(--color-tertiary);
 		align-items: center;
 		gap: var(--medium);
 	}
 
-	#logo a {
-		width: 100px;
+	#logo span {
+		color: var(--off-white);
 	}
 
 	a {
