@@ -45,13 +45,13 @@
 <style>
 	article {
 		max-width: 500px;
-		padding: 1rem;
-		background: var(--color-lightgrey);
-		border-radius: var(--medium);
-		border: var(--tiny) solid var(--color-secondary);
+		padding: var(--large);
+		background: var(--off-white);
+		border-radius: var(--large);
+		border: var(--tiny) solid var(--color-lightgrey);
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
+		gap: var(--large);
 	}
 
 	section {

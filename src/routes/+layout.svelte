@@ -1,4 +1,21 @@
 <script lang="ts">
+	import { page } from '$app/stores';
+	import { invalidate } from '$app/navigation';
+	import { supabaseClient } from '@lib/db';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		const {
+			data: { subscription }
+		} = supabaseClient.auth.onAuthStateChange(() => {
+			invalidate('supabase:auth');
+			invalidate('user');
+		});
+
+		return () => {
+			subscription.unsubscribe();
+		};
+	});
 </script>
 
 <nav>
@@ -7,10 +24,17 @@
 	</span>
 	<section>
 		<div>
-			<a href="/profile"
-				>Profile
-				<img src="icons/full/user-circle.svg" width="24" height="24" alt="a house" />
-			</a>
+			{#if $page?.data?.session}
+				<a href="/profile"
+					>Profile
+					<img src="icons/full/user-circle.svg" width="24" height="24" alt="a house" />
+				</a>
+			{:else}
+				<a href="/login"
+					>Login
+					<img src="icons/full/user-circle.svg" width="24" height="24" alt="a house" />
+				</a>
+			{/if}
 		</div>
 		<div>
 			<a href="/create"

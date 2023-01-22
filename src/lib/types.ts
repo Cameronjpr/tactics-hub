@@ -32,6 +32,7 @@ export const formations = [
 ];
 
 export type Gameplan = {
+	author: string;
 	id?: number;
 	version: string;
 	title: string;
