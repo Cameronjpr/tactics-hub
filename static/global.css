@@ -47,12 +47,15 @@ a, a:visited {
 }
 
 button {
+  display: flex;
+  align-items: center;
+  gap: var(--medium);
   background: var(--color-tertiary);
-  color: var(--color-grey);
-  border: none;
+  color: var(--color-secondary);
+  border: 1px solid var(--color-lightgrey);
   border-radius: 0.5rem;
   padding: 0.5rem;
-  height: 2.5rem;
+  height: 2rem;
   font-size: 18px;
   cursor: pointer;
 }
@@ -67,7 +70,7 @@ input:not([type='range']) {
   padding: 0.25rem;
   padding-inline: 0.5rem;
   height: 1.5rem;
-  font-size: 18px;
+  font-size: 1rem;
 }
 
 select {
